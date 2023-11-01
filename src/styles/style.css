@@ -1,0 +1,15 @@
+:is(.dark) body {
+  background-color: #171515;
+}
+
+:is(.dark) .MuiSwitch-track {
+  background-color: rgba(0, 136, 255, 0.539) !important;
+}
+
+* {
+  user-select: none;
+}
+
+:is(.dark) .MuiCheckbox-colorPrimary {
+  color: rgba(0, 136, 255, 0.731) !important;
+}

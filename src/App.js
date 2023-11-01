@@ -1,32 +1,53 @@
-import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import HandleRoutes from "./Components/APP/HandleRoutes";
+import AppNotification from "./Components/AppNotification";
+import NavigationMenu from "./Components/TopBar/NavigationMenu";
+
+import ErrorPage from "./pages/404";
+
+import Login from "./pages/auth/Login";
+import Signup from "./pages/auth/Signup";
+import AccountDelete from "./pages/main/AccountDelete";
+import Birthdays from "./pages/main/Birthdays";
+import CompleteAccount from "./pages/main/CompleteAccount";
+import Dashboard from "./pages/main/Dashboard";
+
+import NewBirthdays from "./pages/main/NewBirthday";
+import UpdateBirthday from "./pages/main/UpdateBirthday";
+import YourAccount from "./pages/main/YourAccount";
+import Lists from "./pages/main/list";
+import IndeterminateCheckbox from "./pages/main/list/Examplelist";
 
 function App() {
   return (
-    <div className="flex flex-col h-full items-center justify-center bg-gray-200 text-gray-700">
-      <div className="flex items-center">
-        <h1 className="text-6xl font-thin tracking-wider">Create React App + Tailwind CSS</h1>
-      </div>
-      <p className="my-6 tracking-wide">
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <div className="mt-6 flex justify-center">
-        <a
-          className="uppercase hover:underline"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <a
-          className="ml-10 uppercase hover:underline"
-          href="https://tailwindcss.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Tailwind
-        </a>
-      </div>
+    <div className="">
+      <Router>
+        <NavigationMenu />
+        <HandleRoutes />
+        <Routes>
+          {/* Auth Routes */}
+          <Route path="/auth/signup" element={<Signup />} />
+          <Route path="/auth/login" element={<Login />} />
+          <Route path="/account/complete" element={<CompleteAccount />} />
+
+          {/* Dashboard and Settings Routes */}
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/your-account" element={<YourAccount />} />
+          <Route path="/account/delete" element={<AccountDelete />} />
+          <Route path="/birthdays" element={<Birthdays />} />
+          <Route path="/new" element={<NewBirthdays />} />
+          <Route path="/update/:id" element={<UpdateBirthday />} />
+          <Route path="/lists" element={<Lists />} />
+          <Route path="/examplelist" element={<IndeterminateCheckbox />} />
+
+          {/* error page */}
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+
+        <div className="h-[100px]"></div>
+        <AppNotification />
+      </Router>
     </div>
   );
 }
