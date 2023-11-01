@@ -11,8 +11,8 @@ import LogError from "../../utilities/LogError";
 
 function Signup() {
   const [data, setData] = useState({
-    email: "test@gmail.com",
-    password: "yuasg465rsS#",
+    email: "",
+    password: "",
   });
 
   const [responseData, setResponseData] = useState({ message: "", status: "" });

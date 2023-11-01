@@ -14,8 +14,8 @@ import FailedErrorMessage from "../../utilities/FailedErrorMessage";
 
 function Login() {
   const [data, setData] = useState({
-    email: "test@gmail.com",
-    password: "yuasg465rsS#",
+    email: "",
+    password: "",
   });
 
   const [responseData, setResponseData] = useState({ message: "", status: "" });
