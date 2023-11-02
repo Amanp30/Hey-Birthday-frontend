@@ -6,7 +6,7 @@ import { getListDataEndpoint } from "../../../Services/Lists";
 import FailedErrorMessage from "../../../utilities/FailedErrorMessage";
 import SelectIDS from "./SelectIDS";
 
-export default function ExportList({ open, close, setLoadList }) {
+export default function ExportList({ open, close }) {
   const cancelButtonRef = useRef(null);
 
   const [data, setData] = useState([]);
@@ -36,8 +36,8 @@ export default function ExportList({ open, close, setLoadList }) {
       close();
       window.location.href = window.location.href;
     }
-
     if (userIDS.length > 0) return;
+
     close();
   };
 

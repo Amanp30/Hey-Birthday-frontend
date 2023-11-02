@@ -20,7 +20,6 @@ function YourList({ loadList }) {
   const [errorMessage, setErrorMessage] = useState("");
   const [data, setData] = useState([]);
 
-  console.log({ loadList });
   function getLIsts() {
     yourListsEndpoint()
       .then((response) => {

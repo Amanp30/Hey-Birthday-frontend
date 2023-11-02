@@ -74,7 +74,7 @@ export const getListDataEndpoint = async (id) => {
 export const newListDataEndpoint = async (data) => {
   try {
     const response = await api.post(
-      `${process.env.REACT_APP_API}/newlist/${userid}`,
+      `${process.env.REACT_APP_API}/new-list/${userid}`,
       data
     );
     return response?.data;

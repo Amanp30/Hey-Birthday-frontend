@@ -37,7 +37,6 @@ function SelectIDS({ data, userIDS, setUserIDS, close, isloading }) {
     formData.append("ids", JSON.stringify(userIDS));
     formData.append("otherdata", JSON.stringify(otherdata));
 
-    close(true);
     newListDataEndpoint(formData)
       .then((response) => {
         // setData(response);
@@ -51,6 +50,7 @@ function SelectIDS({ data, userIDS, setUserIDS, close, isloading }) {
         });
         setClickNext(false);
         Notify(response?.message, "success");
+        close(true);
       })
       .catch((error) => {
         Notify(error?.response?.data?.message || FailedErrorMessage, "error");

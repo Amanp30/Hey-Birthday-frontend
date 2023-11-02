@@ -17,7 +17,6 @@ import NewBirthdays from "./pages/main/NewBirthday";
 import UpdateBirthday from "./pages/main/UpdateBirthday";
 import YourAccount from "./pages/main/YourAccount";
 import Lists from "./pages/main/list";
-import IndeterminateCheckbox from "./pages/main/list/Examplelist";
 
 function App() {
   return (
@@ -39,7 +38,6 @@ function App() {
           <Route path="/new" element={<NewBirthdays />} />
           <Route path="/update/:id" element={<UpdateBirthday />} />
           <Route path="/lists" element={<Lists />} />
-          <Route path="/examplelist" element={<IndeterminateCheckbox />} />
 
           {/* error page */}
           <Route path="*" element={<ErrorPage />} />

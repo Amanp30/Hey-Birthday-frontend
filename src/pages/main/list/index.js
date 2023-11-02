@@ -8,13 +8,11 @@ function Lists() {
   const [importOpen, setImportOpen] = useState(false);
 
   const [exportOpen, setExportOpen] = useState(false);
-  const [listAgain, setListAgain] = useState(5);
 
   const closeImport = () => {
     setImportOpen(false);
   };
   const closeExport = () => {
-    setListAgain(listAgain + listAgain);
     setExportOpen(false);
   };
 
@@ -25,11 +23,7 @@ function Lists() {
         <div className="ml-0 max-w-4xl px-2 py-2 lg:py-6 sm:px-6 lg:px-8 ">
           <ImportWindow open={importOpen} close={closeImport} />
 
-          <ExportList
-            open={exportOpen}
-            close={closeExport}
-            setLoadList={setListAgain}
-          />
+          <ExportList open={exportOpen} close={closeExport} />
 
           <div className=" flex gap-8">
             <div
@@ -51,7 +45,7 @@ function Lists() {
             Your Lists will show below
           </p>
 
-          <YourList loadList={listAgain} />
+          <YourList />
         </div>
       </div>
     </>

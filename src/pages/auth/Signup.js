@@ -24,8 +24,6 @@ function Signup() {
 
     SingupEndpoint(formData)
       .then((response) => {
-        console.log("Signup successful", response);
-
         setData({ email: "", password: "" });
         setResponseData({
           message: response.message,
