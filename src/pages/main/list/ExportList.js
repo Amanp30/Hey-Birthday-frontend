@@ -34,7 +34,7 @@ export default function ExportList({ open, close }) {
     console.log({ forceClose });
     if (forceClose) {
       close();
-      window.location.href = window.location.href;
+      window.location.href = "/lists";
     }
     if (userIDS.length > 0) return;
 
